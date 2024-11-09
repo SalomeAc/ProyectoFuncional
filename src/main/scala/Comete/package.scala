@@ -19,11 +19,14 @@ package object Comete {
   type PolMeasure = Distribution => Double
 
   def min_p(f: Double => Double, min: Double, max: Double, prec: Double): Double = {
-    // Devuelve el punto p en [min, max] tal que f(p) es mínimo
-    // Suponiendo que f es cóncava
-    // Si max - min < prec, devuelve el punto medio de [min, max]
-
-  }
+         if ((max - min) < prec) (min + max) / 2
+         else {
+               val p1 = min + (max - min) / 3
+               val p2 = max - (max - min) / 3
+           } if (f(p1) < f(p2)) min_p(f, min, p2, prec)
+             else min_p(f, p1, max, prec)
+         }
+   }
 
   def rhoCMT_Gen(alpha: Double, beta: Double): PolMeasure = {
     // Dados alpha y beta, devuelve la función que calcula la medida
