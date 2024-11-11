@@ -35,7 +35,7 @@ package object Comete {
          else {
                val p1 = min + (max - min) / 3
                val p2 = max - (max - min) / 3
-           } if (f(p1) < f(p2)) min_p(f, min, p2, prec)
+            if (f(p1) < f(p2)) min_p(f, min, p2, prec)
              else min_p(f, p1, max, prec)
          }
    }
