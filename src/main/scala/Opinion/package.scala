@@ -54,7 +54,11 @@ package object Opinion {
   }
 
   def showWeightedGraph(swg: SpecificWeightedGraph): IndexedSeq[IndexedSeq[Double]] = {
+    val (funcionInfluencia, numAgentes) = swg // swg es una tupla
 
+    IndexedSeq.tabulate(numAgentes, numAgentes) { (i, j) => // Construye una matriz de tamaño numAgentes x numAgentes
+      funcionInfluencia(i, j) // Valor de la influencia del agente i sobre el j
+    }
   }
 
   def simulate(fu: FunctionUpdate, swg: SpecificWeightedGraph, b0: SpecificBelief, t: Int): IndexedSeq[SpecificBelief] = {

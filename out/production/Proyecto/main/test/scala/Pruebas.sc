@@ -25,3 +25,24 @@ cmt1 (pi_int3, likert5)
 cmt1 (pi_cons_centro, likert5)
 cmt1 (pi_cons_der, likert5)
 cmt1 (pi_cons_izq, likert5)
+
+//
+
+def i1(nags: Int): SpecificWeightedGraph = {
+  ((i: Int, j: Int) =>
+    if (i == j) 1.0
+    else if (i < j) 1.0 / (j - i).toDouble
+    else 0.0, nags)
+}
+
+def i2(nags: Int): SpecificWeightedGraph = {
+  ((i: Int, j: Int) =>
+    if (i == j) 1.0
+    else if (i < j) (j - i).toDouble / nags.toDouble
+    else (nags - (i - j)).toDouble / nags.toDouble, nags)
+}
+
+val i1_10 = i1(10)
+val i2_10 = i2(10)
+val i1_20 = i1(20)
+val i2_20 = i2(20)
