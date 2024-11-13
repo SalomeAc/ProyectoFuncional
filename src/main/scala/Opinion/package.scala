@@ -62,7 +62,20 @@ package object Opinion {
   }
 
   def simulate(fu: FunctionUpdate, swg: SpecificWeightedGraph, b0: SpecificBelief, t: Int): IndexedSeq[SpecificBelief] = {
+    // Devuelve la secuencia de creencias específicas por cada t
+    def iterar(paso: Int, creencias: SpecificBelief, acumulador: IndexedSeq[SpecificBelief]): IndexedSeq[SpecificBelief] = {
+      // Condición de parada: si hemos llegado al número de pasos `t`, devolvemos el acumulador
+      if (paso >= t) acumulador
+      else {
+        // Calcular las nuevas creencias para el siguiente paso
+        val nuevasCreencias = fu(creencias, swg)
+        // Llamada recursiva con paso + 1, las nuevas creencias, y el acumulador actualizado
+        iterar(paso + 1, nuevasCreencias, acumulador :+ nuevasCreencias)
+      }
+    }
 
+    // Llamada inicial a la función recursiva
+    iterar(0, b0, IndexedSeq(b0))
   }
 
   // Versiones paralelas
@@ -75,4 +88,5 @@ package object Opinion {
   def confBiasUpdatePar(sb: SpecificBelief, swg: SpecificWeightedGraph): SpecificBelief = {
 
   }
+  
 }

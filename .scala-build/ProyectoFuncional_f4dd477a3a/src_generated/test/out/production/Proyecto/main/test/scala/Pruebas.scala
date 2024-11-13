@@ -1,3 +1,10 @@
+package out.production.Proyecto.main.test.scala
+
+
+final class Pruebas$_ {
+def args = Pruebas_sc.args$
+def scriptPath = """out/production/Proyecto/main/test/scala/Pruebas.sc"""
+/*<script>*/
 import main.scala.Comete._
 
 val pi_max = Vector(0.5, 0.0, 0.0, 0.0, 0.5)
@@ -67,3 +74,27 @@ for {
 for {
   b <- simulate(confBiasUpdate, i1_10, sbm_10, 2)
 } yield (b, rho1(b, dist1))
+
+/*</script>*/ /*<generated>*//*</generated>*/
+}
+
+object Pruebas_sc {
+  private var args$opt0 = Option.empty[Array[String]]
+  def args$set(args: Array[String]): Unit = {
+    args$opt0 = Some(args)
+  }
+  def args$opt: Option[Array[String]] = args$opt0
+  def args$: Array[String] = args$opt.getOrElse {
+    sys.error("No arguments passed to this script")
+  }
+
+  lazy val script = new Pruebas$_
+
+  def main(args: Array[String]): Unit = {
+    args$set(args)
+    val _ = script.hashCode() // hashCode to clear scalac warning about pure expression in statement position
+  }
+}
+
+export Pruebas_sc.script as `Pruebas`
+

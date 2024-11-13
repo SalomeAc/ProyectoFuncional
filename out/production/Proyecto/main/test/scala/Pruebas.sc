@@ -26,6 +26,19 @@ cmt1 (pi_cons_centro, likert5)
 cmt1 (pi_cons_der, likert5)
 cmt1 (pi_cons_izq, likert5)
 
+val cmt1_norm = normalizar(cmt1)
+
+cmt1_norm (pi_max, likert5)
+cmt1_norm (pi_min ,likert5)
+cmt1_norm (pi_der ,likert5)
+cmt1_norm (pi_izq ,likert5)
+cmt1_norm (pi_int1, likert5)
+cmt1_norm (pi_int2, likert5)
+cmt1_norm (pi_int3, likert5)
+cmt1_norm (pi_cons_centro, likert5)
+cmt1_norm (pi_cons_der, likert5)
+cmt1_norm (pi_cons_izq, likert5)
+
 //
 
 def i1(nags: Int): SpecificWeightedGraph = {
@@ -46,3 +59,11 @@ val i1_10 = i1(10)
 val i2_10 = i2(10)
 val i1_20 = i1(20)
 val i2_20 = i2(20)
+
+for {
+  b <- simulate(confBiasUpdate, i1_10, sbu_10, 2)
+} yield (b, rho1(b, dist1))
+
+for {
+  b <- simulate(confBiasUpdate, i1_10, sbm_10, 2)
+} yield (b, rho1(b, dist1))

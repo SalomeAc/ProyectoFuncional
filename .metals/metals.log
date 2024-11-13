@@ -1,0 +1,180 @@
+2024.11.13 14:35:34 INFO  Started: Metals version 1.4.0 in folders 'C:\Users\salom\Desktop\ProyectoFuncional' for client Visual Studio Code 1.95.2.
+2024.11.13 14:35:35 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.11.13 14:35:35 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.13 14:35:38 WARN  no build target for: C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc
+2024.11.13 14:35:38 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.13 14:35:38 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.13 14:35:41 INFO  Running List(C:\Users\salom\AppData\Local\Coursier\data\bin\scala-cli.BAT, setup-ide, C:\Users\salom\Desktop\ProyectoFuncional)
+2024.11.13 14:35:41 INFO  Attempting to connect to the build server...
+2024.11.13 14:35:41 INFO  Running BSP server List(C:\Users\salom\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\salom\Desktop\ProyectoFuncional\.scala-build\ide-options-v2.json, --json-launcher-options, C:\Users\salom\Desktop\ProyectoFuncional\.scala-build\ide-launcher-options.json, --envs-file, C:\Users\salom\Desktop\ProyectoFuncional\.scala-build\ide-envs.json, C:\Users\salom\Desktop\ProyectoFuncional)
+2024.11.13 14:35:44 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\salom\Desktop\ProyectoFuncional\.metals\bsp.trace.json or C:\Users\salom\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.11.13 14:35:44 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.13 14:35:44 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.13 14:35:46 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.13 14:35:47 ERROR scala.meta.internal.metals.debug.DiscoveryFailures$BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc
+	at scala.meta.internal.metals.debug.DebugDiscovery.validate(DebugDiscovery.scala:94)
+	at scala.meta.internal.metals.debug.DebugDiscovery.debugDiscovery(DebugDiscovery.scala:170)
+	at scala.meta.internal.metals.debug.DebugDiscovery.runCommandDiscovery(DebugDiscovery.scala:61)
+	at scala.meta.internal.metals.MetalsLspService.discoverMainClasses(MetalsLspService.scala:1509)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:818)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:271)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:201)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.11.13 14:35:52 INFO  BSP server: Starting compilation server
+2024.11.13 14:35:57 ERROR scala.meta.internal.metals.debug.DiscoveryFailures$BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc
+	at scala.meta.internal.metals.debug.DebugDiscovery.validate(DebugDiscovery.scala:94)
+	at scala.meta.internal.metals.debug.DebugDiscovery.debugDiscovery(DebugDiscovery.scala:170)
+	at scala.meta.internal.metals.debug.DebugDiscovery.runCommandDiscovery(DebugDiscovery.scala:61)
+	at scala.meta.internal.metals.MetalsLspService.discoverMainClasses(MetalsLspService.scala:1509)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:818)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:271)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:201)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.11.13 14:35:58 WARN  no build target for: C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc
+2024.11.13 14:35:58 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.13 14:35:58 ERROR scala.meta.internal.metals.debug.DiscoveryFailures$BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc
+	at scala.meta.internal.metals.debug.DebugDiscovery.validate(DebugDiscovery.scala:94)
+	at scala.meta.internal.metals.debug.DebugDiscovery.debugDiscovery(DebugDiscovery.scala:170)
+	at scala.meta.internal.metals.MetalsLspService.debugDiscovery(MetalsLspService.scala:1476)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:1006)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:271)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:201)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.11.13 14:35:58 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.13 14:35:59 INFO  time: Connected to build server in 18s
+2024.11.13 14:35:59 INFO  Connected to Build server: scala-cli v1.4.3
+2024.11.13 14:36:00 INFO  time: Imported build in 0.46s
+2024.11.13 14:36:00 INFO  running doctor check
+2024.11.13 14:36:00 INFO  java targets: ProyectoFuncional_f4dd477a3a, ProyectoFuncional_f4dd477a3a-test
+2024.11.13 14:36:01 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 14:36:14 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.11.13 14:36:31 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 30s
+2024.11.13 14:36:31 INFO  time: Imported build in 21s
+2024.11.13 14:36:32 INFO  running doctor check
+2024.11.13 14:36:32 INFO  java targets: ProyectoFuncional_f4dd477a3a, ProyectoFuncional_f4dd477a3a-test
+2024.11.13 14:36:32 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 14:36:35 INFO  time: indexed workspace in 35s
+2024.11.13 14:36:35 INFO  Deduplicating compilation of ProyectoFuncional_f4dd477a3a from bsp client 'scala-cli 1.4.3' (since 37.679s)
+2024.11.13 14:36:35 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 14:36:39 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 3.12s
+2024.11.13 14:36:39 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 14:36:40 INFO  time: indexed workspace in 8.54s
+2024.11.13 14:36:43 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 3.89s
+2024.11.13 14:37:28 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 14:37:28 INFO  Deduplicating compilation of ProyectoFuncional_f4dd477a3a from bsp client 'scala-cli 1.4.3' (since 1m 30.658s)
+2024.11.13 14:37:28 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 14:37:31 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 2.37s
+2024.11.13 14:37:31 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 14:37:33 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.84s
+2024.11.13 14:38:49 INFO  time: Imported build in 0.31s
+2024.11.13 14:38:49 INFO  running doctor check
+2024.11.13 14:38:49 INFO  java targets: ProyectoFuncional_f4dd477a3a, ProyectoFuncional_f4dd477a3a-test
+2024.11.13 14:38:56 INFO  time: indexed workspace in 7.54s
+2024.11.13 14:38:56 INFO  Correctly reloaded workspace
+nov. 13, 2024 3:14:23 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 41
+2024.11.13 15:14:34 INFO  time: Imported build in 1.23s
+2024.11.13 15:14:35 INFO  running doctor check
+2024.11.13 15:14:35 INFO  java targets: ProyectoFuncional_f4dd477a3a, ProyectoFuncional_f4dd477a3a-test
+2024.11.13 15:14:35 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:14:43 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 7.85s
+2024.11.13 15:14:43 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:14:46 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 2.08s
+2024.11.13 15:14:46 INFO  time: indexed workspace in 11s
+2024.11.13 15:14:46 INFO  time: Imported build in 0.14s
+2024.11.13 15:14:47 INFO  running doctor check
+2024.11.13 15:14:47 INFO  java targets: ProyectoFuncional_f4dd477a3a, ProyectoFuncional_f4dd477a3a-test
+2024.11.13 15:14:47 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:14:50 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 3.04s
+2024.11.13 15:14:50 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:14:53 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 2.83s
+2024.11.13 15:14:54 INFO  time: indexed workspace in 7.74s
+2024.11.13 15:14:55 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:14:58 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 2.59s
+2024.11.13 15:14:58 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:15:01 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 2.53s
+2024.11.13 15:15:01 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:15:03 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.75s
+2024.11.13 15:15:03 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:15:05 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.38s
+2024.11.13 15:15:05 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:15:07 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.4s
+2024.11.13 15:15:07 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:15:09 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.16s
+2024.11.13 15:15:09 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:15:10 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 0.73s
+2024.11.13 15:15:10 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:15:10 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 0.79s
+2024.11.13 15:15:31 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:15:33 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.8s
+2024.11.13 15:15:33 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:15:33 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 0.64s
+2024.11.13 15:30:51 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:30:53 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 2.38s
+2024.11.13 15:30:53 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:30:55 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.35s
+2024.11.13 15:30:55 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:30:57 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.59s
+2024.11.13 15:30:57 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:30:59 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.13s
+2024.11.13 15:31:01 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:31:02 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.1s
+2024.11.13 15:31:02 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:31:02 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 0.86s
+2024.11.13 15:31:05 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:31:05 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 0.91s
+2024.11.13 15:31:06 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:31:06 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 0.55s
+2024.11.13 15:31:13 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:31:14 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.26s
+2024.11.13 15:31:14 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:31:16 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 1.76s
+2024.11.13 15:31:16 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:31:17 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 0.78s
+2024.11.13 15:31:17 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.13 15:31:17 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 0.65s
