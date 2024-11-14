@@ -40,7 +40,7 @@ package object Comete {
         if  (Pcmt < 0.01) 0.0 else Pcmt
       }
       val min = min_p(aux, 0.0, 1.0, 0.01)
-      aux(min)
+      ((aux(min)*1000.0).round)/1000.0
   }
 
   def normalizar(m: MedidaPol): MedidaPol = {
@@ -49,7 +49,11 @@ package object Comete {
     // el peor caso se da cuando la probabilidad de que la polarización sea 0 o 1 es de 0.5
     val peorCaso = m((Vector(0.5, 0.0, 0.0, 0.0, 0.5), Vector(0.0, 0.25, 0.5, 0.75, 1.0)))
 
-    (distribucion: Distribution) => m(distribucion) / peorCaso
+    (distribucion: Distribution) => {
+      val resultadoNormalizado = m(distribucion) / peorCaso
+      ((resultadoNormalizado*1000.0).round) / 1000.0
+    }
   }
 
 }
+

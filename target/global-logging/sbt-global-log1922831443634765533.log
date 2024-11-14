@@ -1,0 +1,49 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(console, Some(4c8161bb-579c-42cd-b0ba-782df272061e), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / console[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 4 Scala sources to C:\Users\salom\Desktop\ProyectoFuncional\target\scala-2.13\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\salom\Desktop\ProyectoFuncional\src\main\scala\Comete\package.scala:39:28: (Double, Double) does not take parameters[0m
+[0m[[0m[31merror[0m] [0m[0m        } yield (math.pow(i(0), alpha) * math.pow(math.abs(i(1) - p), beta))).sum[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\salom\Desktop\ProyectoFuncional\src\main\scala\Comete\package.scala:39:61: (Double, Double) does not take parameters[0m
+[0m[[0m[31merror[0m] [0m[0m        } yield (math.pow(i(0), alpha) * math.pow(math.abs(i(1) - p), beta))).sum[0m
+[0m[[0m[31merror[0m] [0m[0m                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\salom\Desktop\ProyectoFuncional\src\main\scala\Comete\package.scala:39:79: ambiguous implicit values:[0m
+[0m[[0m[31merror[0m] [0m[0m both object BigIntIsIntegral in object Numeric of type scala.math.Numeric.BigIntIsIntegral.type[0m
+[0m[[0m[31merror[0m] [0m[0m and object IntIsIntegral in object Numeric of type scala.math.Numeric.IntIsIntegral.type[0m
+[0m[[0m[31merror[0m] [0m[0m match expected type scala.math.Numeric[B][0m
+[0m[[0m[31merror[0m] [0m[0m        } yield (math.pow(i(0), alpha) * math.pow(math.abs(i(1) - p), beta))).sum[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\salom\Desktop\ProyectoFuncional\src\main\scala\Comete\package.scala:34:44: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : (Comete.package.Frequency, Comete.package.DistributionValues) => Double[0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  (scala.collection.immutable.Vector[Double], scala.collection.immutable.Vector[Double]) => Double[0m
+[0m[[0m[31merror[0m] [0m[0m required: Comete.package.MedidaPol[0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  ((scala.collection.immutable.Vector[Double], scala.collection.immutable.Vector[Double])) => Double[0m
+[0m[[0m[31merror[0m] [0m[0m    (pi: Frequency, y: DistributionValues) =>[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\salom\Desktop\ProyectoFuncional\src\main\scala\Opinion\package.scala:38:60: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: main.scala.Opinion.package.AgentsPolMeasure[0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  (scala.collection.immutable.Vector[Double], scala.collection.immutable.Vector[Double]) => Double[0m
+[0m[[0m[31merror[0m] [0m[0m  def rho(alpha: Double, beta: Double): AgentsPolMeasure = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\salom\Desktop\ProyectoFuncional\src\main\scala\Opinion\package.scala:58:48: main.scala.Opinion.package.SpecificWeightedGraph does not take parameters[0m
+[0m[[0m[31merror[0m] [0m[0m      }yield ((1-math.abs(sb(nbj)-sb(nb)))*(swg(0)(nbj,nb))*(sb(nbj)-sb(nb)))/sb.length).sum).toVector[0m
+[0m[[0m[31merror[0m] [0m[0m                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\salom\Desktop\ProyectoFuncional\src\main\scala\Opinion\package.scala:85:63: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: main.scala.Opinion.package.AgentsPolMeasure[0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  (scala.collection.immutable.Vector[Double], scala.collection.immutable.Vector[Double]) => Double[0m
+[0m[[0m[31merror[0m] [0m[0m  def rhoPar(alpha: Double, beta: Double): AgentsPolMeasure = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\salom\Desktop\ProyectoFuncional\src\main\scala\Opinion\package.scala:91:91: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
+[0m[[0m[31merror[0m] [0m[0m required: main.scala.Opinion.package.SpecificBelief[0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  scala.collection.immutable.Vector[Double][0m
+[0m[[0m[31merror[0m] [0m[0m  def confBiasUpdatePar(sb: SpecificBelief, swg: SpecificWeightedGraph): SpecificBelief = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m8 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 5 s, completed 13/11/2024, 8:48:58 p. m.[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
