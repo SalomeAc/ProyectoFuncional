@@ -50,12 +50,21 @@ package object Opinion {
     (SpecificBelief, SpecificWeightedGraph) => SpecificBelief
 
   def confBiasUpdate(sb: SpecificBelief, swg: SpecificWeightedGraph): SpecificBelief = {
+    val Ai =
+      (for {
+        i <- 0 until sb.length
+      }yield
+        (for {
+          j <- 0 until sb.length
+          if swg(0)(j, i) > 0
+        } yield j)).toVector
+    
     (for {
-      nb <- 0 to sb.length-1
-    }yield sb(nb) + 
+      i <- 0 until sb.length
+    }yield sb(i) +
       (for{
-        nbj <- 0 to sb.length-1
-      }yield ((1-math.abs(sb(nbj)-sb(nb)))*(swg(0)(nbj,nb))*(sb(nbj)-sb(nb)))/sb.length).sum).toVector
+        j <- Ai(i)
+      }yield ((1-math.abs(sb(j)-sb(i)))*(swg(0)(j,i))*(sb(j)-sb(i)))/Ai(i).length).sum).toVector
   }
 
   def showWeightedGraph(swg: SpecificWeightedGraph): IndexedSeq[IndexedSeq[Double]] = {
