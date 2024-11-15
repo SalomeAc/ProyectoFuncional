@@ -28,8 +28,7 @@ package object Opinion {
   // si gb: GenericBelief, entonces gb(n) = b tal que
   // b: SpecificBelief
 
-  type AgentsPolMeasure =
-    (SpecificBelief, DistributionValues) => Double
+  type AgentsPolMeasure = (SpecificBelief, DistributionValues) => Double
   // Si rho: AgentsPolMeasure y sb: SpecificBelief
   // y d: DistributionValues,
   // rho(sb, d) es la polarización de los agentes
@@ -38,7 +37,38 @@ package object Opinion {
   def rho(alpha: Double, beta: Double): AgentsPolMeasure = {
     // rho es la medida de polarización de agentes basada
     // en comete
+    (specificBelief: SpecificBelief, distributionValues: DistributionValues) => {
+      val numAgents = specificBelief.length
+      val k = distributionValues.length
 
+      // Creación de intervalos considerando el primer y último elemento
+      val firstInterval = (0.0, (distributionValues(1) + distributionValues(0)) / 2)
+      val middleIntervals = (1 until k - 1).map(i =>
+        ((distributionValues(i) + distributionValues(i - 1)) / 2,
+          (distributionValues(i) + distributionValues(i + 1)) / 2))
+      val lastInterval = ((distributionValues(k - 2) + distributionValues(k - 1)) / 2, 1.0)
+
+      val intervals = firstInterval +: middleIntervals :+ lastInterval
+
+      // Clasificación de agentes en intervalos
+      val classifiedAgents = specificBelief.map { belief =>
+        intervals.indexWhere { case (start, end) => start <= belief && belief < end } match {
+          case -1 => k - 1  // Asigna al último intervalo si no hay coincidencia
+          case idx => idx
+        }
+      }
+      // Cálculo de frecuencias relativas por intervalo
+      val frequency = intervals.indices.map(i =>
+        classifiedAgents.count(_ == i) / numAgents.toDouble
+      ).toVector
+
+      // Calcula la medida de polarización con normalización
+      val rhoAux = rhoCMT_Gen(alpha, beta)
+      val normalized = normalizar(rhoAux)
+
+      // Calcula la medida de polarización normalizada
+      normalized((frequency, distributionValues))
+      }
   }
 
   // Tipos para modelar la evolución de la opinión en una red
