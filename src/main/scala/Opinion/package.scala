@@ -128,7 +128,20 @@ package object Opinion {
   }
 
   def confBiasUpdatePar(sb: SpecificBelief, swg: SpecificWeightedGraph): SpecificBelief = {
+    val Ai =
+      (0 until sb.length).par.map { i =>
+        (0 until sb.length).collect {
+          case j if swg(0)(j, i) > 0 => j
+        }.toVector
+      }.toVector
 
+    // Calculando el nuevo belief de forma paralela
+    (0 until sb.length).par.map { i =>
+      sb(i) +
+        Ai(i).map { j =>
+          ((1 - math.abs(sb(j) - sb(i))) * (swg(0)(j, i)) * (sb(j) - sb(i))) / Ai(i).length
+        }.sum
+    }.toVector
   }
   
 }
