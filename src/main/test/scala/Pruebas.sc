@@ -1,5 +1,6 @@
-import Comete._
-// import Opinion._
+import main.scala.Comete._
+import main.scala.Benchmark.{compararFuncionesAct, compararMedidasPol, midlyBelief, simEvolucion}
+import main.scala.Opinion.{SpecificBelief, SpecificWeightedGraph, confBiasUpdate, showWeightedGraph, simulate}
 
 val pi_max = Vector(0.5, 0.0, 0.0, 0.0, 0.5)
 val pi_min = Vector(0.0, 0.0, 1.0, 0.0, 0.0)
@@ -14,6 +15,8 @@ val pi_cons_izq = Vector(1.0, 0.0, 0.0, 0.0, 0.0)
 
 val likert5 = Vector(0.0, 0.25, 0.5, 0.75, 1.0)
 
+// Pruebas de rhoCMT_Gen
+
 val cmt1 = rhoCMT_Gen(1.2, 1.2)
 
 cmt1 (pi_max, likert5)
@@ -26,6 +29,8 @@ cmt1 (pi_int3, likert5)
 cmt1 (pi_cons_centro, likert5)
 cmt1 (pi_cons_der, likert5)
 cmt1 (pi_cons_izq, likert5)
+
+// Pruebas de normalizar
 
 val cmt1_norm = normalizar(cmt1)
 
@@ -90,6 +95,8 @@ val sb_unif = uniformBelief(100)
 val sb_triple = allTripleBelief(100)
 val sb_mildly = mildlyBelief(100)
 
+// Pruebas de rho
+
 val rho1 = rho(1.2, 1.2)
 val rho2 = rho(2.0, 1.0)
 val dist1 = Vector(0.0, 0.25, 0.50, 0.75, 1.0)
@@ -139,18 +146,24 @@ val i2_10 = i2(10)
 val i1_20 = i1(20)
 val i2_20 = i2(20)
 
+// Pruebas de showWeightedGraph
+
 showWeightedGraph(i1_10)
+showWeightedGraph(i1_20)
 showWeightedGraph(i2_10)
+showWeightedGraph(i2_20)
 
 val sbu_10 = uniformBelief(10)
-confBiaUpdate(sbu_10, i1_10)
+confBiasUpdate(sbu_10, i1_10)
 rho1(sbu_10, dist1)
-rho1(confBiaUpdate(sbu_10, i1_10), dist1)
+rho1(confBiasUpdate(sbu_10, i1_10), dist1)
 
 val sbm_10 = mildlyBelief(10)
-confBiaUpdate(sbm_10, i1_10)
+confBiasUpdate(sbm_10, i1_10)
 rho1(sbm_10, dist1)
-rho1(confBiaUpdate(sbm_10, i1_10), dist1)
+rho1(confBiasUpdate(sbm_10, i1_10), dist1)
+
+// Pruebas de simulate
 
 for {
   b <- simulate(confBiasUpdate, i1_10, sbu_10, 2)
@@ -159,6 +172,8 @@ for {
 for {
   b <- simulate(confBiasUpdate, i1_10, sbm_10, 2)
 } yield (b, rho1(b, dist1))
+
+// Comparar
 
 val likert5 = Vector(0.0, 0.25, 0.5, 0.75, 1.0)
 val sbms = for {

@@ -1,6 +1,7 @@
 package main.scala
 import Comete.DistributionValues
 import Opinion._
+
 import org.scalameter._
 import plotly._
 import layout._

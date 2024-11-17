@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <profile name="sbt 1" modules="proyectofuncional,proyectofuncional_545" />
-    <profile name="sbt 2" modules="PolarizacionRedes">
+    <profile name="sbt 2" modules="PolarizacionRedes,Proyecto">
       <option name="implicitConversions" value="true" />
       <option name="deprecationWarnings" value="true" />
     </profile>

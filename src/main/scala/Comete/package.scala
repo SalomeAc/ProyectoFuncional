@@ -1,4 +1,6 @@
-//package main.scala
+package main.scala
+
+import scala.math._
 
 package object Comete {
 
@@ -31,16 +33,20 @@ package object Comete {
   def rhoCMT_Gen(alpha: Double, beta: Double): MedidaPol = {
     // Dados alpha y beta, devuelve la función que calcula la medida
     // cometa parametrizada en alpha y beta
-    (pi: Frequency, y: DistributionValues) =>
+    (Distribution: (Frequency, DistributionValues)) => {
+      val (pi, y) = Distribution
       val com = pi zip y
-      def aux(p:Double):Double = {
+
+      def aux(p: Double): Double = {
         val Pcmt = (for {
           i <- com
-        } yield (math.pow(i(0), alpha) * math.pow(math.abs(i(1) - p), beta))).sum
-        if  (Pcmt < 0.01) 0.0 else Pcmt
+        } yield (math.pow(i._1, alpha) * math.pow(math.abs(i._2 - p), beta))).sum
+        if (Pcmt < 0.01) 0.0 else Pcmt
       }
+
       val min = min_p(aux, 0.0, 1.0, 0.01)
-      ((aux(min)*1000.0).round)/1000.0
+      ((aux(min) * 1000.0).round) / 1000.0
+    }
   }
 
   def normalizar(m: MedidaPol): MedidaPol = {

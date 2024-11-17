@@ -35,11 +35,11 @@ package object Opinion {
   // rho(sb, d) es la polarización de los agentes
   // de acuerdo a esa medida
 
-  def rho(alpha: Double, beta: Double): AgentsPolMeasure = {
-    // rho es la medida de polarización de agentes basada
-    // en comete
-
-  }
+//  def rho(alpha: Double, beta: Double): AgentsPolMeasure = {
+//    // rho es la medida de polarización de agentes basada
+//    // en comete
+//
+//  }
 
   // Tipos para modelar la evolución de la opinión en una red
   type WeightedGraph = (Int, Int) => Double
@@ -56,7 +56,7 @@ package object Opinion {
       }yield
         (for {
           j <- 0 until sb.length
-          if swg(0)(j, i) > 0
+          if swg._1(j, i) > 0
         } yield j)).toVector
     
     (for {
@@ -64,7 +64,7 @@ package object Opinion {
     }yield sb(i) +
       (for{
         j <- Ai(i)
-      }yield ((1-math.abs(sb(j)-sb(i)))*(swg(0)(j,i))*(sb(j)-sb(i)))/Ai(i).length).sum).toVector
+      }yield ((1-math.abs(sb(j)-sb(i)))*(swg._1(j,i))*(sb(j)-sb(i)))/Ai(i).length).sum).toVector
   }
 
   def showWeightedGraph(swg: SpecificWeightedGraph): IndexedSeq[IndexedSeq[Double]] = {
@@ -91,14 +91,14 @@ package object Opinion {
   }
 
   // Versiones paralelas
-  def rhoPar(alpha: Double, beta: Double): AgentsPolMeasure = {
-    // rho es la medida de polarización de agentes basada
-    // en comete
+//  def rhoPar(alpha: Double, beta: Double): AgentsPolMeasure = {
+//    // rho es la medida de polarización de agentes basada
+//    // en comete
+//
+//  }
 
-  }
-
-  def confBiasUpdatePar(sb: SpecificBelief, swg: SpecificWeightedGraph): SpecificBelief = {
-
-  }
-  
+//  def confBiasUpdatePar(sb: SpecificBelief, swg: SpecificWeightedGraph): SpecificBelief = {
+//
+//  }
+//
 }
