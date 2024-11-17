@@ -51,13 +51,17 @@ package object Comete {
 
   def normalizar(m: MedidaPol): MedidaPol = {
     // Recibe una medida de polarización, y devuelve la correspondiente medida que la calcula normalizada
-    
-    // el peor caso se da cuando la probabilidad de que la polarización sea 0 o 1 es de 0.5
-    val peorCaso = m((Vector(0.5, 0.0, 0.0, 0.0, 0.5), Vector(0.0, 0.25, 0.5, 0.75, 1.0)))
+
+    def construirPeorCaso(dv: DistributionValues): Distribution = {
+      val frecuencias = Vector(0.5) ++ Vector.fill(dv.length - 2)(0.0) ++ Vector(0.5)
+      (frecuencias, dv) // Retornar la distribución construida
+    }
 
     (distribucion: Distribution) => {
+      val peorCasoDistribucion = construirPeorCaso(distribucion._2)
+      val peorCaso = m(peorCasoDistribucion) // Calcular el peor caso
       val resultadoNormalizado = m(distribucion) / peorCaso
-      ((resultadoNormalizado*1000.0).round) / 1000.0
+      ((resultadoNormalizado * 1000.0).round) / 1000.0
     }
   }
 

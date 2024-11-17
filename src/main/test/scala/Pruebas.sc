@@ -1,6 +1,6 @@
 import main.scala.Comete._
-import main.scala.Benchmark.{compararFuncionesAct, compararMedidasPol, midlyBelief, simEvolucion}
-import main.scala.Opinion.{SpecificBelief, SpecificWeightedGraph, confBiasUpdate, showWeightedGraph, simulate}
+import main.scala.Benchmark._
+import main.scala.Opinion._
 
 val pi_max = Vector(0.5, 0.0, 0.0, 0.0, 0.5)
 val pi_min = Vector(0.0, 0.0, 1.0, 0.0, 0.0)
