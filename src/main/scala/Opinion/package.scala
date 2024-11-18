@@ -124,10 +124,45 @@ package object Opinion {
   def rhoPar(alpha: Double, beta: Double): AgentsPolMeasure = {
     // rho es la medida de polarización de agentes basada
     // en comete
+    (specificBelief: SpecificBelief, distributionValues: DistributionValues) => {
+      val numAgents = specificBelief.length
+      val k = distributionValues.length
 
-  }
+      val intervalsTask = task {
+        (0 until k).map {
+          case 0 => (0.0, (distributionValues(1) + distributionValues(0)) / 2)
+          case i if i == k - 1 => ((distributionValues(k - 2) + distributionValues(k - 1)) / 2, 1.0)
+          case i => ((distributionValues(i) + distributionValues(i - 1)) / 2,
+            (distributionValues(i) + distributionValues(i + 1)) / 2)
+        }.toVector
+      }
 
-  def confBiasUpdatePar(sb: SpecificBelief, swg: SpecificWeightedGraph): SpecificBelief = {
+      val classifiedAgentsTask = task {
+        specificBelief.map { belief =>
+          intervalsTask.join().indexWhere { case (start, end) =>
+            start <= belief && belief < end
+          } match {
+            case -1 => k - 1  // Asigna al último intervalo si no hay coincidencia
+            case idx => idx
+          }
+        }.toVector
+      }
+
+      val frequencyTask = task {
+        val classifiedAgents = classifiedAgentsTask.join()
+        (0 until k).map(i =>
+          classifiedAgents.count(_ == i) / numAgents.toDouble
+        ).toVector
+      }
+
+      val rhoAux = rhoCMT_Gen(alpha, beta)
+      val normalized = normalizar(rhoAux)
+
+      normalized((frequencyTask.join(), distributionValues))
+    }
+}
+
+    def confBiasUpdatePar(sb: SpecificBelief, swg: SpecificWeightedGraph): SpecificBelief = {
     val Ai =
       (0 until sb.length).par.map { i =>
         (0 until sb.length).collect {
