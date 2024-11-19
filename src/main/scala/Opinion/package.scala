@@ -163,7 +163,7 @@ package object Opinion {
 }
 
   def confBiasUpdatePar(sb: SpecificBelief, swg: SpecificWeightedGraph): SpecificBelief = {
-    val Ai = (0 until sb.length).map { i =>
+    val Ai = (0 until sb.length).par.map { i =>
       task {
         (0 until sb.length).collect {case j if swg._1(j, i) > 0 => j}.toVector
       }
