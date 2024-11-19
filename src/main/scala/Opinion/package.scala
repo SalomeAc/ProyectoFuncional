@@ -35,8 +35,8 @@ package object Opinion {
   // de acuerdo a esa medida
 
   def rho(alpha: Double, beta: Double): AgentsPolMeasure = {
-    // rho es la medida de polarización de agentes basada
-    // en comete
+    // rho es la medida de polarización de agentes basada en comete
+
     (specificBelief: SpecificBelief, distributionValues: DistributionValues) => {
       val numAgents = specificBelief.length
       val k = distributionValues.length

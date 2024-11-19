@@ -26,9 +26,9 @@ package object Comete {
                val p1 = min + (max - min) / 3
                val p2 = max - (max - min) / 3
             if (f(p1) < f(p2)) min_p(f, min, p2, prec)
-             else min_p(f, p1, max, prec)
+            else min_p(f, p1, max, prec)
          }
-   }
+  }
 
   def rhoCMT_Gen(alpha: Double, beta: Double): MedidaPol = {
     // Dados alpha y beta, devuelve la función que calcula la medida
@@ -41,10 +41,10 @@ package object Comete {
         val Pcmt = (for {
           i <- com
         } yield (math.pow(i._1, alpha) * math.pow(math.abs(i._2 - p), beta))).sum
-        if (Pcmt < 0.01) 0.0 else Pcmt
+        if (Pcmt < 0.001) 0.0 else Pcmt
       }
 
-      val min = min_p(aux, 0.0, 1.0, 0.01)
+      val min = min_p(aux, 0.0, 1.0, 0.0001)
       ((aux(min) * 1000.0).round) / 1000.0
     }
   }

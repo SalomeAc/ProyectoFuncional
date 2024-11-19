@@ -53,7 +53,7 @@ def uniformBelief(nags: Int): SpecificBelief = {
 // Build mildly polarized belief state, in which
 // half of agents has belief decreasing from 0.25, and
 // half has belief increasing from 0.75, all by the given step.
-def mildlyBelief(nags: Int): SpecificBelief = {
+def midlyBelief(nags: Int): SpecificBelief = {
   val middle = nags / 2
   Vector.tabulate(nags)((i: Int) =>
     if (i < middle) math.max(0.25 - 0.01 * (middle - i - 1), 0)
@@ -93,7 +93,7 @@ val sb_ext = allExtremeBelief(100)
 val sb_cons = consensusBelief(0.2)(100)
 val sb_unif = uniformBelief(100)
 val sb_triple = allTripleBelief(100)
-val sb_mildly = mildlyBelief(100)
+val sb_midly = midlyBelief(100)
 
 // Pruebas de rho
 
@@ -122,10 +122,10 @@ rho2(sb_triple, dist1)
 rho1(sb_triple, dist2)
 rho2(sb_triple, dist2)
 
-rho1(sb_mildly, dist1)
-rho2(sb_mildly, dist1)
-rho1(sb_mildly, dist2)
-rho2(sb_mildly, dist2)
+rho1(sb_midly, dist1)
+rho2(sb_midly, dist1)
+rho1(sb_midly, dist2)
+rho2(sb_midly, dist2)
 
 def i1(nags: Int): SpecificWeightedGraph = {
   ((i: Int, j: Int) =>
@@ -158,7 +158,7 @@ confBiasUpdate(sbu_10, i1_10)
 rho1(sbu_10, dist1)
 rho1(confBiasUpdate(sbu_10, i1_10), dist1)
 
-val sbm_10 = mildlyBelief(10)
+val sbm_10 = midlyBelief(10)
 confBiasUpdate(sbm_10, i1_10)
 rho1(sbm_10, dist1)
 rho1(confBiasUpdate(sbm_10, i1_10), dist1)
@@ -191,6 +191,21 @@ cmp1.map(t => t._6)
 val i1_32768 = i1(32768)
 val i2_32768 = i2(32768)
 compararFuncionesAct(sbms.take(sbms.length / 2), i2_32768, confBiasUpdate, confBiasUpdatePar)
+
+val sbms = for {
+  n <-2 until 16
+  nags = math.pow(2,n).toInt
+} yield midlyBelief(nags)
+
+val sbes = for {
+  n <-2 until 16
+  nags = math.pow(2,n).toInt
+} yield allExtremeBelief(nags)
+
+val sbts = for {
+  n <-2 until 16
+  nags = math.pow(2,n).toInt
+} yield allTripleBelief(nags)
 
 val evolsSec = for {
   i <- 0 until sbms.length
