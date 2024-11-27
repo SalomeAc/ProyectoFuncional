@@ -584,3 +584,52 @@ ADVERTENCIA: Unmatched cancel notification for request id 433
 2024.11.13 20:50:12 INFO  shutting down Metals
 2024.11.13 20:50:12 INFO  Shut down connection with build server.
 2024.11.13 20:50:12 INFO  Exiting server
+2024.11.21 00:08:42 INFO  Started: Metals version 1.4.1 in folders 'C:\Users\salom\Desktop\ProyectoFuncional' for client Visual Studio Code 1.95.3.
+2024.11.21 00:08:44 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.11.21 00:08:44 WARN  no build target for: C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc
+2024.11.21 00:08:44 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.21 00:08:44 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.21 00:08:44 ERROR scala.meta.internal.metals.debug.DiscoveryFailures$BuildTargetNotFoundForPathException: No build target could be found for the path: C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc
+	at scala.meta.internal.metals.debug.DebugDiscovery.validate(DebugDiscovery.scala:94)
+	at scala.meta.internal.metals.debug.DebugDiscovery.debugDiscovery(DebugDiscovery.scala:170)
+	at scala.meta.internal.metals.MetalsLspService.debugDiscovery(MetalsLspService.scala:1477)
+	at scala.meta.internal.metals.WorkspaceLspService.executeCommand(WorkspaceLspService.scala:1006)
+	at scala.meta.metals.lsp.DelegatingScalaService.executeCommand(DelegatingScalaService.scala:169)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:569)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:271)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:201)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+nov. 21, 2024 12:08:44 A. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 2
+2024.11.21 00:08:47 INFO  Attempting to connect to the build server...
+2024.11.21 00:08:47 INFO  Running BSP server List(C:\Users\salom\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\salom\Desktop\ProyectoFuncional\.scala-build\ide-options-v2.json, --json-launcher-options, C:\Users\salom\Desktop\ProyectoFuncional\.scala-build\ide-launcher-options.json, --envs-file, C:\Users\salom\Desktop\ProyectoFuncional\.scala-build\ide-envs.json, C:\Users\salom\Desktop\ProyectoFuncional)
+2024.11.21 00:08:52 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\salom\Desktop\ProyectoFuncional\.metals\bsp.trace.json
+2024.11.21 00:08:58 INFO  no build target found for C:\Users\salom\Desktop\ProyectoFuncional\src\main\test\scala\Pruebas.sc. Using presentation compiler with project's scala-library version: 3.3.4
+2024.11.21 00:09:08 INFO  time: Connected to build server in 21s
+2024.11.21 00:09:08 INFO  Connected to Build server: scala-cli v1.4.3
+2024.11.21 00:09:08 INFO  time: Imported build in 0.36s
+2024.11.21 00:09:08 INFO  running doctor check
+2024.11.21 00:09:08 INFO  java targets: ProyectoFuncional_f4dd477a3a, ProyectoFuncional_f4dd477a3a-test
+2024.11.21 00:09:12 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.21 00:09:31 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.11.21 00:09:35 INFO  time: indexed workspace in 26s
+2024.11.21 00:09:36 INFO  time: compiled ProyectoFuncional_f4dd477a3a in 23s
+2024.11.21 00:09:36 INFO  compiling proyectofuncional_f4dd477a3a (4 scala sources)
+2024.11.21 00:09:40 INFO  Shutting down server
+2024.11.21 00:09:40 INFO  shutting down Metals
+2024.11.21 00:09:40 INFO  Shut down connection with build server.
+2024.11.21 00:09:40 INFO  Cancelling compilation on scala-cli server
+2024.11.21 00:09:40 INFO  Exiting server

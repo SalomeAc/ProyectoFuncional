@@ -108,7 +108,6 @@ package object Benchmark {
     } yield (b.length, t1, t2, t1.value/t2.value)
   }
 
-
   // Simulador de evolución de opinión
   def simEvolucion(sb:Seq[SpecificBelief],swg:SpecificWeightedGraph,
                    tiempoSim:Int, pol:AgentsPolMeasure, fu:FunctionUpdate,

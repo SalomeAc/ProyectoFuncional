@@ -52,7 +52,8 @@ package object Opinion {
 
       // Clasificación de agentes en intervalos
       val classifiedAgents = specificBelief.map { belief =>
-        intervals.indexWhere { case (start, end) => start <= belief && belief < end } match {
+        intervals.indexWhere { case (start, end) =>
+          start <= belief && belief < end } match {
           case -1 => k - 1  // Asigna al último intervalo si no hay coincidencia
           case idx => idx
         }
@@ -68,7 +69,7 @@ package object Opinion {
 
       // Calcula la medida de polarización normalizada
       normalized((frequency, distributionValues))
-      }
+    }
   }
 
   // Tipos para modelar la evolución de la opinión en una red
@@ -112,7 +113,7 @@ package object Opinion {
       else {
         // Calcular las nuevas creencias para el siguiente paso
         val nuevasCreencias = fu(creencias, swg)
-        // Llamada recursiva con paso + 1, las nuevas creencias, y el acumulador actualizado
+        // Llamada recursiva con paso + 1, las nuevas creencias y el acumulador actualizado
         iterar(paso + 1, nuevasCreencias, acumulador :+ nuevasCreencias)
       }
     }
@@ -169,13 +170,13 @@ package object Opinion {
       }
     }.toVector
       
-    val calcularActualizacion = (0 until sb.length).map { i =>
+    val calcularActualizacion = (0 until sb.length).par.map { i =>
       task {
         sb(i) + Ai(i).join().map { j => ((1 - math.abs(sb(j) - sb(i))) * (swg._1(j, i)) * (sb(j) - sb(i))) / Ai(i).join().length}.sum
       }
     }.toVector
       
-    calcularActualizacion.map(_.join()).toVector
+    calcularActualizacion.map(_.join())
   }
   
 }

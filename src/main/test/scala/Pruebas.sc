@@ -45,50 +45,6 @@ cmt1_norm (pi_cons_centro, likert5)
 cmt1_norm (pi_cons_der, likert5)
 cmt1_norm (pi_cons_izq, likert5)
 
-// Build uniform belief state.
-def uniformBelief(nags: Int): SpecificBelief = {
-  Vector.tabulate(nags)((i: Int) => (i + 1).toDouble / nags.toDouble)
-}
-
-// Build mildly polarized belief state, in which
-// half of agents has belief decreasing from 0.25, and
-// half has belief increasing from 0.75, all by the given step.
-def midlyBelief(nags: Int): SpecificBelief = {
-  val middle = nags / 2
-  Vector.tabulate(nags)((i: Int) =>
-    if (i < middle) math.max(0.25 - 0.01 * (middle - i - 1), 0)
-    else math.min(0.75 - 0.01 * (middle - i), 1)
-  )
-}
-
-// Build extreme polarized belief state, in which half
-// of the agents has belief 0, and half has belief 1.
-def allExtremeBelief(nags: Int): SpecificBelief = {
-  val middle = nags / 2
-  Vector.tabulate(nags)((i: Int) =>
-    if (i < middle) 0.0 else 1.0
-  )
-}
-
-// Build three-pole belief state, in which each
-// one third of the agents has belief 0, one third has belief 0.5,
-// and one third has belief 1.
-def allTripleBelief(nags: Int): SpecificBelief = {
-  val oneThird = nags / 3
-  val twoThird = (nags / 3) * 2
-  Vector.tabulate(nags)((i: Int) =>
-    if (i < oneThird) 0.0
-    else if (i >= twoThird) 1.0
-    else 0.5
-  )
-}
-
-// Builds consensus belief state, in which each
-// all agents have same belief.
-def consensusBelief(b: Double)(nags: Int): SpecificBelief = {
-  Vector.tabulate(nags)((_: Int) => b)
-}
-
 val sb_ext = allExtremeBelief(100)
 val sb_cons = consensusBelief(0.2)(100)
 val sb_unif = uniformBelief(100)
@@ -126,20 +82,6 @@ rho1(sb_midly, dist1)
 rho2(sb_midly, dist1)
 rho1(sb_midly, dist2)
 rho2(sb_midly, dist2)
-
-def i1(nags: Int): SpecificWeightedGraph = {
-  ((i: Int, j: Int) =>
-    if (i == j) 1.0
-    else if (i < j) 1.0 / (j - i).toDouble
-    else 0.0, nags)
-}
-
-def i2(nags: Int): SpecificWeightedGraph = {
-  ((i: Int, j: Int) =>
-    if (i == j) 1.0
-    else if (i < j) (j - i).toDouble / nags.toDouble
-    else (nags - (i - j)).toDouble / nags.toDouble, nags)
-}
 
 val i1_10 = i1(10)
 val i2_10 = i2(10)
@@ -192,6 +134,7 @@ val i1_32768 = i1(32768)
 val i2_32768 = i2(32768)
 compararFuncionesAct(sbms.take(sbms.length / 2), i2_32768, confBiasUpdate, confBiasUpdatePar)
 
+
 val sbms = for {
   n <-2 until 16
   nags = math.pow(2,n).toInt
@@ -206,9 +149,17 @@ val sbts = for {
   n <-2 until 16
   nags = math.pow(2,n).toInt
 } yield allTripleBelief(nags)
+//
+//val evolsSec = for {
+//  i <- 0 until sbms.length
+//} yield simEvolucion(Seq(sbms(i), sbes(i), sbts(i)),
+//  i2_32768, 10, polSec, confBiasUpdate, likert5,
+//  "Simulacion_Secuencial_" ++ i.toString ++ "-" ++ sbms(i).length.toString)
+//
+//val evolsPar = for {
+//  i <- 0 until sbms.length
+//} yield simEvolucion(Seq(sbms(i),sbes(i),sbts(i)),
+//  i2_32768,10,polPar,confBiasUpdatePar,likert5,
+//  "Simulación Paralela " ++ i.toString ++ "-"
+//    ++ sbms(i).length.toString)
 
-val evolsSec = for {
-  i <- 0 until sbms.length
-} yield simEvolucion(Seq(sbms(i), sbes(i), sbts(i)), 
-  i2_32768, 10, polSec, confBiasUpdate, likert5,
-  "Simulacion_Secuencial_" ++ i.toString ++ "-" ++ sbms(i).length.toString)
