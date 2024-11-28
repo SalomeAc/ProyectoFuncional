@@ -1,17 +1,12 @@
 Archivos entregados:
 
-Carpeta Comete: contiene un archivo package.scala que implementa las funciones min_p, rhoCMT_Gen y normalizar,
-utilizadas como base para el análisis de distribuciones y medidas de polarización.
+Carpeta Comete: contiene un archivo package.scala que implementa las funciones min_p, rhoCMT_Gen y normalizar,utilizadas como base para el análisis de distribuciones y medidas de polarización.
 
-Carpeta Opinion: contiene un archivo package.scala que implementa las funciones rho, confBiasUpdate, showWeightedGraph,
-simulate, rhoPar y confBiasUpdatePar, que corresponden a las versiones paralelas de rho y confBiasUpdate. Este archivo
-implementa las funciones y estructuras relacionadas con la evolución de opiniones en redes de agentes a lo largo del
-tiempo.
+Carpeta Opinion: contiene un archivo package.scala que implementa las funciones rho, confBiasUpdate, showWeightedGraph, simulate, rhoPar y confBiasUpdatePar, que corresponden a las versiones paralelas de rho y confBiasUpdate. Este archivo implementa las funciones y estructuras relacionadas con la evolución de opiniones en redes de agentes a lo largo del tiempo.
 
 Instrucciones para ejecutar los programas:
 
-Se debe tener la siguiente estructura, preferiblemente en un IDE, contar con archivos sbt, Benchmark y common, en este
-caso brindados por el profesor y tener instalada por lo menos la versión 2.13 de Scala:
+Se debe tener la siguiente estructura, preferiblemente en un IDE, contar con archivos sbt, Benchmark y common, en este caso brindados por el profesor y tener instalada por lo menos la versión 2.13 de Scala:
 
 proyecto/
 ├── src/
