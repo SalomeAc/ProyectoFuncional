@@ -8,6 +8,10 @@ ThisBuild / javaOptions ++= Seq(
   "-XX:+UseG1GC"
 )
 
+javaOptions += "-Xmx2g"
+javaOptions += "-Xms1g"
+
+
 lazy val root = (project in file("."))
   .settings(
     name := "Proyecto"

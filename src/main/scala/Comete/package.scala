@@ -31,8 +31,7 @@ package object Comete {
   }
 
   def rhoCMT_Gen(alpha: Double, beta: Double): MedidaPol = {
-    // Dados alpha y beta, devuelve la función que calcula la medida
-    // cometa parametrizada en alpha y beta
+    // Dados alpha y beta, devuelve la función que calcula la medida cometa parametrizada en alpha y beta
     (Distribution: (Frequency, DistributionValues)) => {
       val (pi, y) = Distribution
       val com = pi zip y
@@ -50,7 +49,7 @@ package object Comete {
   }
 
   def normalizar(m: MedidaPol): MedidaPol = {
-    // Recibe una medida de polarización, y devuelve la correspondiente medida que la calcula normalizada
+    // Recibe una medida de polarización y devuelve la medida que la calcula normalizada
 
     def construirPeorCaso(dv: DistributionValues): Distribution = {
       val frecuencias = Vector(0.5) ++ Vector.fill(dv.length - 2)(0.0) ++ Vector(0.5)

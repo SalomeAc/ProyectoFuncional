@@ -89,7 +89,7 @@ package object Opinion {
           j <- 0 until sb.length
           if swg._1(j, i) > 0
         } yield j)).toVector
-    
+
     (for {
       i <- 0 until sb.length
     }yield sb(i) +
@@ -99,7 +99,7 @@ package object Opinion {
   }
 
   def showWeightedGraph(swg: SpecificWeightedGraph): IndexedSeq[IndexedSeq[Double]] = {
-    val (funcionInfluencia, numAgentes) = swg // swg es una tupla
+    val (funcionInfluencia, numAgentes) = swg // swg es una tupla (WeightedGraph, Int)
 
     IndexedSeq.tabulate(numAgentes, numAgentes) { (i, j) => // Construye una matriz de tamaño numAgentes x numAgentes
       funcionInfluencia(i, j) // Valor de la influencia del agente i sobre el j
@@ -122,9 +122,9 @@ package object Opinion {
   }
 
   // Versiones paralelas
+
   def rhoPar(alpha: Double, beta: Double): AgentsPolMeasure = {
-    // rho es la medida de polarización de agentes basada
-    // en comete
+    // rho es la medida de polarización de agentes basada en comete
     (specificBelief: SpecificBelief, distributionValues: DistributionValues) => {
       val numAgents = specificBelief.length
       val k = distributionValues.length
@@ -146,7 +146,7 @@ package object Opinion {
             case -1 => k - 1  // Asigna al último intervalo si no hay coincidencia
             case idx => idx
           }
-        }.toVector
+        }
       }
 
       val frequencyTask = task {

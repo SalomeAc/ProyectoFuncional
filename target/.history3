@@ -1,3 +1,43 @@
 1731548933329:console
 1731595632441:scala
 1731633963243:console
+1732769467620:// Pruebas de simulate
+1732769467661:for {
+1732769467837:} yield (b, rho1(b, dist1))
+1732769467912:for {
+1732769468039:} yield (b, rho1(b, dist1))
+1732769468100:// Comparar
+1732769468141:val likert5 = Vector(0.0, 0.25, 0.5, 0.75, 1.0)
+1732769468204:val sbms = for {
+1732769468375:} yield midlyBelief(nags)
+1732769468426:val polSec = rho(1.2, 1.2)
+1732769468491:val polPar = rhoPar(1.2, 1.2)
+1732769468556:val cmp1 = compararMedidasPol(sbms, likert5, polSec, polPar)
+1732769468605:cmp1.map(t => t._6) // aceleración
+1732769468664:cmp1.map(t => t._4) // tiempo secuencial
+1732769468712:cmp1.map(t => t._5) // tiempo concurrente
+1732769468768:cmp1.map(t => t._2) // medida de polarización secuencial
+1732769468816:cmp1.map(t => t._3) // medida de polarización concurrente
+1732769468880:val i1_32768 = i1(32768)
+1732769468912:val i2_32768 = i2(32768)
+1732769468961:compararFuncionesAct(sbms.take(sbms.length / 2), i2_32768, confBiasUpdate, confBiasUpdatePar)
+1732769469028:val sbms = for {
+1732769469129:} yield midlyBelief(nags)
+1732769469175:val sbes = for {
+1732769469278:} yield allExtremeBelief(nags)
+1732769469318:val sbts = for {
+1732769469410:} yield allTripleBelief(nags)
+1732769469432://
+1732769469448://val evolsSec = for {
+1732769469476://  i <- 0 until sbms.length
+1732769469489://} yield simEvolucion(Seq(sbms(i), sbes(i), sbts(i)),
+1732769469521://  i2_32768, 10, polSec, confBiasUpdate, likert5,
+1732769469545://  "Simulacion_Secuencial_" ++ i.toString ++ "-" ++ sbms(i).length.toString)
+1732769469565://
+1732769469583://val evolsPar = for {
+1732769469598://  i <- 0 until sbms.length
+1732769469629://} yield simEvolucion(Seq(sbms(i),sbes(i),sbts(i)),
+1732769469650://  i2_32768,10,polPar,confBiasUpdatePar,likert5,
+1732769469661://  "Simulación Paralela " ++ i.toString ++ "-"
+1732769469686://    ++ sbms(i).length.toString)
+1732769474436:console
